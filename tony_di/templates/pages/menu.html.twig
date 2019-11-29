@@ -1,0 +1,36 @@
+{% block body %}
+    {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <p id="connexion_menu"><a href="{{ asset('login') }}"><i class="fas fa-user"></i> &nbsp;Se connecter</a></p>
+    {% else %}
+        <p id="logout_menu"><a href="{{ asset("logout") }}"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a></p>
+    {% endif %}
+
+    <div id="menu_container" class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 image-grid-item">
+                <div id="theatre_menu" class="entry-cover image-grid-cover has-image" style="background-image: url('{{ asset('images/img2.jpg') }}')">
+                    <a href="theatre" class="image-grid-clickbox"></a>
+                    <a href="theatre" class="cover-wrapper">Théâtre</a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 image-grid-item">
+                <div id="animations_menu" class="image-grid-cover" style="background-image: url('{{ asset('images/affiche.jpg') }}')">
+                    <a href="animations" class="image-grid-clickbox"></a>
+                    <a href="animations" class="cover-wrapper">Animations</a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 image-grid-item">
+                <div id="date_a_venir_menu" class="entry-cover image-grid-cover has-image">
+                    <a href="post/dates" class="image-grid-clickbox"></a>
+                    <a href="post/dates" class="cover-wrapper">Dates à venir</a>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 image-grid-item">
+                <div id="a_propos_menu" class="entry-cover image-grid-cover has-image" style="background-image: url('{{ asset('images/img3.jpg') }}')">
+                    <a href="presentation" class="image-grid-clickbox"></a>
+                    <a href="presentation" class="cover-wrapper">À propos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

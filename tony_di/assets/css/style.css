@@ -1,0 +1,418 @@
+#title_index, #nav_and_h1, #post_dates_edit h1, #post_dates_new h1 {
+    background-image:linear-gradient(#4169e1, #FFF);
+}
+
+#title_index img {
+    position: relative;
+    left: 0;
+}
+
+#emoji_index {
+    position: absolute;
+    left: 61%;
+    top: 2%;
+}
+
+#emoji_index img {
+    width: 130%;
+    opacity: 0;
+}
+
+#menu_container {
+    margin-top: 100px;
+}
+
+.image-grid-cover {
+    width: 100%;
+    background-size: cover;
+    min-height: 180px;
+    position: relative;
+    margin-bottom: 30px;
+    text-shadow: rgba(0,0,0,.8) 0 1px 0;
+    border-radius: 4px;
+}
+
+.image-grid-clickbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: rgba(0,0,0,.45);
+}
+.cover-wrapper {
+    font-size: 3em;
+    text-align: center;
+    display: block;
+    color: #fff;
+    text-shadow: rgba(0,0,0,.8) 0 1px 0;
+    z-index: 21;
+    position: relative;
+    top: 80px;
+}
+.cover-wrapper:hover {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 2px 1px #4169E1;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-image:linear-gradient(#FFF, #4169e1);
+    height: 150px;
+    margin-top: 50px;
+}
+
+.footer_icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer_icon img {
+    width: 40%;
+}
+#footer_newsletter {
+    margin-top: 20px;
+}
+
+
+/* MENU */
+
+#connexion_menu, #logout_menu {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 1.3em;
+}
+
+#connexion_menu a, #logout_menu a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#connexion_menu a:hover, #logout_menu a:hover {
+    text-shadow: 2px 1px #4169E1;
+}
+
+#connexion_menu i, #logout_menu i {
+    font-size: 1.5em;
+}
+
+
+/* CONNEXION / REGISTRATION */
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+#body_login, #body_register, #body_forgotten_password, #body_reset_password {
+    background-size: cover;
+    height: 800px;
+}
+
+.return_homepage {
+    font-size: 1.5em;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+#card_registration {
+    height: 420px;
+}
+
+.social_icon span{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #4169e1;
+}
+
+.social_icon span:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3{
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: #4169e1;
+    color: #FFF;
+    border:0 !important;
+    height: 40px;
+    font-size: 1.5em;
+}
+
+.input-group input {
+    width: 86%;
+    height: 40px;
+    font-size: 1em;
+}
+
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.input-group-text i {
+    width: 100%;
+}
+
+.remember{
+    color: white;
+}
+
+.remember input
+{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn{
+    color: #FFF;
+    background-color: #4169e1;
+    width: 100px;
+    font-size: 1.1em;
+}
+
+.login_btn:hover{
+    color: #4169e1;
+    background-color: #FFFFFF;
+}
+
+.links{
+    color: white;
+}
+
+.links a{
+    color: #FFFFFF;
+    margin-left: 4px;
+}
+
+.links a:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+    text-shadow: 2px 2px #4169e1;
+}
+
+#btn_connexion, #btn_register, #btn_send_forgotton_password {
+    font-size: 1.1em;
+}
+
+#btn_register {
+    margin-top: 20px;
+}
+
+.card-body {
+    font-size: 1.5em;
+}
+
+.card-footer {
+    font-size: 1.5em;
+}
+
+
+/* POST DATES INDEX */
+
+#post_dates_index {
+    margin-bottom: 500px;
+    font-size: 1.3em;
+}
+
+#post_dates_index h1, #post_dates_edit h1, #post_dates_new h1 {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+#post_dates_index_link_create {
+    margin-left: 10px;
+}
+
+#post_dates_th_actions {
+    width: 15%;
+}
+
+#post_dates_index_theater {
+    color: #2298F6;
+}
+
+#post_dates_index_animation {
+    color: #F62222;
+}
+
+/*#post_dates_index .btn-outline-primary {
+    color: #000000;
+    border: 1px #000000 solid;
+}
+
+#post_dates_index .btn-outline-primary:hover {
+    color: #FFFFFF;
+    border: 1px #FFFFFF solid;
+    background-color: ##10AFD8;
+}*/
+
+#date_theater_color, #date_animation_color, #test_color {
+    display: flex;
+}
+
+#date_theater_color_block {
+    width: 10px;
+    height: 10px;
+    border: 1px #000000 solid;
+    background-color: #2298F6;
+    margin: 5px 5px 0 10px;
+}
+
+#date_animation_color_block {
+    width: 10px;
+    height: 10px;
+    border: 1px #000000 solid;
+    background-color: #F62222;
+    margin: 5px 5px 0 20px;
+}
+
+
+/* POST DATES SHOW */
+
+#post_dates_btn_show {
+    display: flex;
+}
+
+#post_dates_btn_show a {
+    margin-inline: 10px;
+}
+
+.post_dates_form {
+    margin: 50px;
+}
+
+.post_dates_form h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.post_dates_form_fields {
+    margin: 10px;
+}
+
+#post_dates_form_fields_id {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline-danger {
+    position: relative;
+    left: 46%;
+    bottom: 24px;
+}
+
+.post_dates_form .btn-outline-primary {
+    margin-left: 3%;
+}
+
+
+/* THEATER */
+
+#theater_h1 {
+    font-size: 4em;
+    text-align: center;
+    height: 70px;
+    margin-top: 20px;
+}
+
+.theater {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.img_block img {
+    width: 30%;
+}
+
+.img_inline img {
+    width: 50%;
+}
+
+.img_small img {
+    width: 20%;
+}
+
+#block_theater h2 {
+    display: flex;
+    justify-content: center;
+    margin-block: 30px;
+    font-size: 3em;
+}
+
+#block_theater p {
+    font-size: 1.3em;
+    padding: 20px;
+    padding-top: 5%;
+}
+
+#block_theater img {
+    padding: 10px;
+}
+
+
+/* FORGOTTEN PASSWORD / RESET PASSWORD */
+
+#body_forgotten_password .card, #body_reset_password .card {
+    height: 250px;
+}
+
+
+
+
+
+#menu_pages a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#menu_pages a:hover {
+    font-size: 1.5em;
+    text-shadow: 1px 1px #1F85DE;
+}
+
+#menu_pages ul {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+#menu_pages li {
+    list-style: none;
+}

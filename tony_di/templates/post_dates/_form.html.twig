@@ -1,0 +1,10 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div id="post_dates_form_fields_id">
+{{ form_start(form) }}
+    {{ form_widget(form.category, {'attr': {'class': 'post_dates_form_fields'}}) }}
+    {{ form_widget(form.date, {'attr': {'class': 'post_dates_form_fields'}}) }}
+    {{ form_widget(form.spectacle, {'attr': {'class': 'post_dates_form_fields', 'placeholder': 'spectacle'}}) }}
+    {{ form_widget(form.lieu, {'attr': {'class': 'post_dates_form_fields', 'placeholder': 'lieu'}}) }}
+    <button class="btn btn-outline-primary">{{ button_label|default('Publier') }}</button>
+{{ form_end(form) }}
+</div>

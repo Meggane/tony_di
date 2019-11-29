@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tony Di - Mise à jour date{% endblock %}
+
+{% block body %}
+    <div id="post_dates_edit">
+        <h1>Mise à jour de la date</h1>
+        <a href="{{ path('post_dates_index') }}">Retour à la liste</a>
+        <div class="post_dates_form">
+        {{ include('post_dates/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+        {{ include('post_dates/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

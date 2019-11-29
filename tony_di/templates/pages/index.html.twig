@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tony Di - Accueil{% endblock %}
+{% block titleSocialNetworksOP %}Tony Di - Accueil{% endblock %}
+{% block titleSocialNetworksTwitter %}Tony Di - Accueil{% endblock %}
+
+{% block body %}
+    <header>
+        <p id="title_index"><img src="{{ asset('images/indexdi.jpg') }}"></p>
+        <p id="emoji_index"><img src="{{ asset('images/emoji%20guitare.gif') }}"></p>
+    </header>
+
+    <section>
+        {{ include("pages/menu.html.twig") }}
+    </section>
+
+    <footer>
+        {{ include("pages/footer.html.twig") }}
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('build/style.js') }}"></script>
+    <script src="{{ asset('build/runtime.js') }}"></script>
+    <script src="{{ asset('build/vendors~style.js') }}"></script>
+{% endblock %}

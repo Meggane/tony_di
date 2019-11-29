@@ -1,0 +1,15 @@
+ <div id="nav_and_h1">
+    <nav id="menu_pages">
+        <ul>
+            <li><a href="{{ asset("homepage") }}"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="{{ asset("theatre") }}"><i class="fas fa-theater-masks"></i> Théâtre</a></li>
+            <li><a href="{{ asset("animations") }}"><i class="fab fa-itunes-note"></i> Animations</a></li>
+            <li><a href="{{ asset("post/dates") }}"><i class="fas fa-calendar-alt"></i> Dates</a></li>
+            <li><a href="{{ asset("presentation") }}"><i class="far fa-question-circle"></i> À propos</a></li>
+            {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li><a href="{{ asset("login") }}"><i class="fas fa-user"></i> Se connecter</a></li>
+            {% else %}
+                <li><a href="{{ asset("logout") }}"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a></li>
+            {% endif %}
+        </ul>
+    </nav>

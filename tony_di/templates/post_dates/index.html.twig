@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tony Di - Dates à venir{% endblock %}
+
+{% block body %}
+    <div id="post_dates_index">
+        {{ include("pages/menu_pages.html.twig") }}
+
+        <h1>Dates à venir</h1>
+        </div>
+
+    <div id="test_color">
+        <div id="date_theater_color">
+            <p id="date_theater_color_block"></p>
+            <p>Théâtre</p>
+        </div>
+        <div id="date_animation_color">
+            <p id="date_animation_color_block"></p>
+            <p>Animations</p>
+        </div>
+    </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Spectacle</th>
+                    <th>Lieu</th>
+                    {% if is_granted('ROLE_USER') %}
+                        <th id="post_dates_th_actions">Actions</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for post_date in post_dates %}
+                {% if post_date.category ? 'Théâtre' %}
+                <tr id="post_dates_index_theater">
+                {% else %}
+                <tr id="post_dates_index_animation">
+                {% endif %}
+                    <td>{{ post_date.date ? post_date.date|date('d/m/Y H:i') : '' }}</td>
+                    <td>{{ post_date.spectacle }}</td>
+                    <td>{{ post_date.lieu }}</td>
+                    {% if is_granted('ROLE_USER') %}
+                        <td>
+                            <a href="{{ path('post_dates_show', {'id': post_date.id}) }}" class="btn btn-outline-primary">Voir</a>
+
+                            <a href="{{ path('post_dates_edit', {'id': post_date.id}) }}" class="btn btn-outline-primary">Mettre à jour</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucune date trouvée</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('post_dates_new') }}" id="post_dates_index_link_create" class="btn btn-primary">Créer une nouvelle date</a>
+        {% endif %}
+    </div>
+
+    <footer>
+        {{ include("pages/footer.html.twig") }}
+    </footer>
+{% endblock %}

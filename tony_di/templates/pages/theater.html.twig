@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tony Di - Théâtre{% endblock %}
+{% block titleSocialNetworksOP %}Tony Di - Théâtre{% endblock %}
+{% block titleSocialNetworksTwitter %}Tony Di - Théâtre{% endblock %}
+
+{% block body %}
+    {{ include("pages/menu_pages.html.twig") }}
+
+    <h1 id="theater_h1">Théâtre</h1>
+    </div>
+
+    <div id="block_theater">
+        <h2>Comme à la maison</h2>
+        <div class="theater img_inline">
+            <img src="{{ asset("images/affiche.jpg") }}">
+            <p>Tony nous transporte dans un univers ensoleillé, parsemé de chansons franco-italiennes que le public reprend en choeur.<br>
+
+                Son " italianitude " est un prétexte pour crier son amour de la France.<br>
+                Même l'irrésistible Tonton Nino y va de ses fables de La Fontaine, aux accents italiens. Il est aussi à l'aise sur scène qu'à un repas chez " la Mamma ".<br>
+                Un spectacle " al dente " plein d'amour, de soleil et de chansons.<br>
+
+                <a href="#" class="btn btn-outline-primary theater_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+            </p>
+        </div>
+
+        <h2>Poupée Gonflante</h2>
+        <div class="theater img_block">
+            <p>Après 15 ans de mariage c'est la saint-valentin de trop !<br>
+
+                L'échange de cadeau vire à la catastrophe !<br>
+
+                Tout fout le campet comme on dit : " à part un miracle on n'est pas sorti des ronces. "<br>
+
+                Mais l'amour n'a pas dit son dernier mot !<br>
+
+                <a href="https://www.facebook.com/TheatreLulusurLaColline/videos/1305127799588577/" class="btn btn-outline-primary theater_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+            </p>
+            <img src="{{ asset("images/poupée_gonflante.jpg") }}">
+        </div>
+
+        <h2>Tinder Surprise</h2>
+        <div class="theater img_block">
+            <img src="{{ asset("images/tinder_surprise.jpg") }}">
+            <p>Chloé et Fred se sont rencontrés sur Tinder, ont décidé de faire un enfant et pendant 9 mois, ils vont aller de surprise en surprise...<br>
+
+                Elle, c'est Chloé, une trentenaire souriante, au caractère bien trempé, adepte du "Girl Power". Lui, c'est Fred, son petit mari d'amour, adolescent attardé, ascendant gros nounours.<br>
+                Ils se sont rencontrés sur Tinder, ont décidé de faire un enfant et pendant 9 mois, vont aller de surprise en surprise...<br>
+
+                <a href="https://www.youtube.com/watch?v=VdPf1tDlcl0" class="btn btn-outline-primary theater_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+            </p>
+        </div>
+
+        <h2>La croisière ça use</h2>
+        <div class="theater img_small">
+            <p>Faux semblants et vrais délires, la traversée va virer à la débandade...<br>
+
+                Antoine, skipper, doit convoyer un voilier de Tanger à Ibiza. Afin de lier l'utile à l'agréable, il a passé une annonce pour partager la traversée avec 3 équipières.<br>
+                Embarquent Mélanie, une superbe jeune femme qui serait plus à sa place dans un émission de télé réalité que sur la méditerranée, Joanna, baroudeuse et chienne de garde et Alex... un homme ! Premiers couacs d'une croisière très secouée...<br>
+
+                Entre incompatibilité d'humeur et avaries en cascade, la tempête à bord est inévitable... Surtout quand les équipiers ne sont pas vraiment ce qu'ils prétendent être... La croisière ça use !<br>
+
+                <a href="https://www.youtube.com/watch?v=4K0e6MTFkqA" class="btn btn-outline-primary theater_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+            </p>
+            <img src="{{ asset("images/la_croisière_ca_use.jpeg") }}">
+        </div>
+
+        <h2>Opération Hermès</h2>
+        <div class="theater img_small">
+            <img src="{{ asset("images/opération_hermès.jpg") }}">
+            <p>Un agent secret hyper entraîné se retrouve à voyager dans le temps malgré lui et à devoir, en plus sauver le monde entouré d'une équipe d'amateurs<br>
+
+                Vous aimez les séries télé américaines, les personnages attachants, les intrigues, les dialogues incisifs ? Pour la première fois, une équipe d'auteurs et de comédiens inventent le concept de "série télé théâtre".<br>
+
+                Retrouvez une Dream Team d'agents secrets décalés et désopilants dans leur première saison, à la poursuite de l'ange du mal.
+            </p>
+        </div>
+
+        <h2>Douce France</h2>
+        <div class="theater img_block">
+            <p>Max politiquement très à droite attend un travail, Miguel très à gauche attend un rendez-vous Tinder, et Patrick très au centre attend un enfant.<br>
+
+                La présence d'Emmanuel Macron dans le quartier, bloque ce gilet bleu, ce gilet rouge et ce gilet orange dans le "Bar Des Amis".<br>
+
+                Enfermés, ces trois grandes gueules vont faire l'état des lieux du pays, sans filtre, et tout le monde va en prendre pour son compte!<br>
+                Mais quand un événement fait basculer la brève de comptoir en fait divers, c'est toute la France des gilets jaunes qui se retrouve.<br>
+                Le bar, c'est la véritable Assemblée nationale des Français...<br>
+
+                On discute de tout, de rien ;<br>
+                On a raison, on a tort ;<br>
+                On s'aime, on se déteste ;<br>
+                On rit, on pleure ;<br>
+                On est intelligent, on est con ;<br>
+                On est français quoi !<br>
+
+                <a href="https://www.youtube.com/watch?v=ZE-J34Q3h0s" class="btn btn-outline-primary theater_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+            </p>
+            <img src="{{ asset("images/douce_france.jpg") }}">
+        </div>
+    </div>
+
+    <footer>
+        {{ include("pages/footer.html.twig") }}
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
