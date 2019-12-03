@@ -255,7 +255,7 @@ input:focus{
     font-size: 3em;
 }
 
-#post_dates_index_link_create {
+#post_dates_index_link_create, #post_theater_index_link_create {
     margin-left: 10px;
 }
 
@@ -326,7 +326,7 @@ input:focus{
     margin: 10px;
 }
 
-#post_dates_form_fields_id {
+#post_dates_form_fields_id, #post_theater_form_fields_id {
     display: flex;
     justify-content: center;
 }
@@ -342,6 +342,13 @@ input:focus{
 }
 
 
+/* POST THEATER SHOW */
+
+.post_theater_form_fields {
+    margin-top: 10px;
+}
+
+
 /* THEATER */
 
 #theater_h1 {
@@ -353,8 +360,13 @@ input:focus{
 
 .theater {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
+}
+
+#post_theater_content_and_link {
+    display: block;
+    padding-top: 5%;
+    padding-left: 2%;
 }
 
 .img_block img {
@@ -378,12 +390,14 @@ input:focus{
 
 #block_theater p {
     font-size: 1.3em;
-    padding: 20px;
-    padding-top: 5%;
 }
 
 #block_theater img {
     padding: 10px;
+}
+
+#block_theater .btn_show {
+    margin-left: 10px;
 }
 
 

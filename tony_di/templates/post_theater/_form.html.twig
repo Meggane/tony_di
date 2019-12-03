@@ -1,0 +1,10 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div id="post_theater_form_fields_id">
+    {{ form_start(form) }}
+    {{ form_widget(form.title, {'attr': {'class': 'post_theater_form_fields', 'placeholder': 'Titre'}}) }}
+    {{ form_widget(form.image, {'attr': {'class': 'post_theater_form_fields', 'placeholder': 'Ajouter une image'}}) }}
+    {{ form_widget(form.content, {'attr': {'class': 'post_theater_form_fields'}}) }}
+    {{ form_widget(form.link_teaser, {'attr': {'class': 'post_theater_form_fields', 'placeholder': 'Lien du teaser'}}) }}
+    <button class="btn btn-outline-primary">{{ button_label|default('Publier') }}</button>
+    {{ form_end(form) }}
+</div>
