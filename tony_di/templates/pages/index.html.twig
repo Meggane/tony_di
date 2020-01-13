@@ -6,8 +6,10 @@
 
 {% block body %}
     <header>
-        <p id="title_index"><img src="{{ asset('images/indexdi.jpg') }}"></p>
-        <p id="emoji_index"><img src="{{ asset('images/emoji%20guitare.gif') }}"></p>
+        <p id="title_index">
+            <img id="header_img_tony_di" src="{{ asset('images/indexdi.jpg') }}">
+            <span id="emoji_index"><img src="{{ asset('images/emoji%20guitare.gif') }}"></span>
+        </p>
     </header>
 
     <section>
@@ -17,10 +19,4 @@
     <footer>
         {{ include("pages/footer.html.twig") }}
     </footer>
-{% endblock %}
-
-{% block javascripts %}
-    <script src="{{ asset('build/style.js') }}"></script>
-    <script src="{{ asset('build/runtime.js') }}"></script>
-    <script src="{{ asset('build/vendors~style.js') }}"></script>
 {% endblock %}

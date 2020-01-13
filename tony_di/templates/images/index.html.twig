@@ -1,0 +1,17 @@
+<div id="post_one_man_show_add_images">
+    {% for image in images %}
+        {% if post_one_man_show.title == image.showName %}
+            <a data-lightbox="image" href="{{ asset(image.urlImage) }}"><img src="{{ asset(image.urlImage) }}"></a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('images_edit', {'id': image.id}) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% if is_granted('ROLE_ADMIN') %}
+<div id="btn_add_img">
+    <a class="btn btn-outline-primary" href="{{ path('images_new') }}"><i class="fas fa-plus"></i> Ajouter une nouvelle image</a>
+</div>
+{% endif %}
+

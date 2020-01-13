@@ -10,24 +10,33 @@
     <h1 id="theater_h1">Théâtre</h1>
     </div>
 
-    <a href="{{ path('post_theater_new') }}" id="post_theater_index_link_create" class="btn btn-primary">Créer un nouveau post</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('post_theater_new') }}" id="post_theater_index_link_create" class="btn btn-primary">Créer un nouveau post</a>
+    {% endif %}
 
     <div id="block_theater">
         {% for post_theater in post_theaters %}
             <h2>{{ post_theater.title }}</h2>
-            <div class="theater img_inline">
+            <div id="post_theater_presentation" class="theater">
+                {% if post_theater.urlImage != null %}
                 <img src="{{ asset(post_theater.urlImage) }}">
+                {% endif %}
                 <div id="post_theater_content_and_link">
                     <p>{{ post_theater.content | raw }}
-
-                        <a href="{{ post_theater.linkTeaser }}" class="btn btn-outline-primary theater_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+                        {% if post_theater.linkTeaser != null %}
+                            <a href="{{ post_theater.linkTeaser }}" class="btn btn-outline-primary theater_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+                        {% endif %}
                     </p>
                 </div>
             </div>
-            <a href="{{ path('post_theater_show', {'id': post_theater.id}) }}" class="btn btn-outline-primary btn_show"><i class="fas fa-eye"></i> show</a>
-            <a href="{{ path('post_theater_edit', {'id': post_theater.id}) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> edit</a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <div id="post_theater_btn_edit_and_delete">
+                    <a href="{{ path('post_theater_edit', {'id': post_theater.id}) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Modifier</a>
+                    {{ include('post_theater/_delete_form.html.twig') }}
+                </div>
+            {% endif %}
         {% else %}
-            <p colspan="6">Aucun post trouvé</p>
+            <p id="post_theater_no_post_found" colspan="6">Aucun post trouvé</p>
         {% endfor %}
     </div>
 

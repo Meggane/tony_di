@@ -1,0 +1,11 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div id="post_dates_form_fields_id">
+{{ form_start(form) }}
+    {{ form_widget(form.name, {'attr': {'class': 'form_fields_comments', 'placeholder': 'Pseudo'}}) }}
+    {{ form_widget(form.content, {'attr': {'class': 'form_fields_comments'}}) }}
+    {{ form_widget(form.show_name, {'attr': {'class': 'form_fields_comments', 'placeholder': 'Nom du spectacle'}}) }}
+    <div class="btn_valid_form">
+        <button class="btn btn-outline-primary"><i class="fas fa-edit"></i> {{ button_label|default('Publier') }}</button>
+    </div>
+{{ form_end(form) }}
+</div>

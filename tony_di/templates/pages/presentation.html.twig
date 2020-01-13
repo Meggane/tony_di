@@ -5,10 +5,23 @@
 {% block titleSocialNetworksTwitter %}Tony Di - À propos{% endblock %}
 
 {% block body %}
+    {{ include("pages/menu_pages.html.twig") }}
+
+    <h1 id="theater_h1">À propos</h1>
+    </div>
+
+    <div id="tony_di_presentation">
+        <img src="{{ asset('images/a_propos.jpg') }}">
+        <p>De son vrai nom Antonio DI STASIO, Tony DI est né à Lyon de parents Italiens.</p>
+        <p>Après avoir chanté pendant 25 ans dans différents groupes de rock amateurs, il fréquente les café-théâtres lyonnais en tant qu'élève.</p>
+        <p>Sur les conseils de son professeur, il écrit un seul en scène y dévoilant ses souvenirs d'enfances, ses qualités d'auteur ainsi que ses expériences américaines et australiennes.</p>
+        <p>Il quitte, à 50 ans, son emploi pour se consacrer pleinement à sa passion, la sène.</p>
+        <p>Il se fait connaître en jouant en première partie de Toto CUTUGNO et Claude BARZOTTI et réécrit son spectacle avec l'aide de son ex professeur devenu son metteur en scène.</p>
+        <p>Les café-théâtres lui ouvrent de nouveau leurs portes mais cette fois en tant qu'artiste !</p>
+        <p>Certains lui proposent des rôles variés dans différentes pièces de théâtre. C'est ainsi qu'on a pu le voir dans "Poupée gonflante", "Opération Hermès", "La croisière ça use", "Douce France" et "Tinder surprise".</p>
+    </div>
+
     <footer>
         {{ include("pages/footer.html.twig") }}
     </footer>
-{% endblock %}
-
-{% block javascripts %}
 {% endblock %}

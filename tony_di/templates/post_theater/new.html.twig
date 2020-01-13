@@ -3,9 +3,8 @@
 {% block title %}Tony Di - Nouveau post{% endblock %}
 
 {% block body %}
-    <h1>Créer nouveau post</h1>
-
+    <h1 class="h1_page_without_menu">Créer un nouveau post</h1>
+    <a href="{{ path('post_theater_index') }}" class="btn btn-outline-primary btn_return"><i class="fas fa-arrow-circle-left"></i> Retour à la page précédente</a>
     {{ include('post_theater/_form.html.twig') }}
-
-    <a href="{{ path('post_theater_index') }}">Retour à la liste</a>
+    <p class="page_without_footer"></p>
 {% endblock %}

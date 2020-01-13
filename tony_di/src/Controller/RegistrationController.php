@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Newsletter;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Security\LoginFormAuthenticator;
@@ -24,7 +25,6 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
@@ -34,15 +34,25 @@ class RegistrationController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
-            $entityManager->flush();
 
-            // do anything else you need here, like send an email
+            if ($user->getReceiveEmails() != null) {
+                $newsletter = $entityManager->getRepository(Newsletter::class);
+                $emailNewsletter = $newsletter->findOneBy(['email' => $user->getEmail()]);
+
+                if (!isset($emailNewsletter) || $user->getEmail() != $emailNewsletter->getEmail()) {
+                    $newNewsletter = new Newsletter();
+                    $newNewsletter->setEmail($user->getEmail());
+                    $entityManager->persist($newNewsletter);
+                }
+            }
+
+            $entityManager->flush();
 
             return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,
                 $request,
                 $authenticator,
-                'main' // firewall name in security.yaml
+                'main'
             );
         }
 

@@ -1,0 +1,22 @@
+{% for comment in comments %}
+    {% if post_one_man_show.title == comment.showName %}
+    <div id="comments_index">
+        <hr>
+        <p>De {{ comment.name }}</p>
+        <p>{{ comment.content | raw }}</p>
+        {% if is_granted('ROLE_ADMIN') %}
+        <div id="comments_btn">
+            <a class="btn btn-outline-primary" href="{{ path('comments_edit', {'id': comment.id}) }}"><i class="fas fa-edit"></i> Modifier</a>
+            {{ include('comments/_delete_form.html.twig') }}
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+{% endfor %}
+
+{% if is_granted('ROLE_ADMIN') %}
+<div id="comments_index_add">
+    <a class="btn btn-outline-primary" href="{{ path('comments_new') }}"><i class="fas fa-plus"></i> Ajouter un nouveau commentaire</a>
+</div>
+{% endif %}
+

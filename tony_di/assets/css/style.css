@@ -1,25 +1,38 @@
-#title_index, #nav_and_h1, #post_dates_edit h1, #post_dates_new h1 {
+#title_index, #nav_and_h1, #post_dates_edit h1, #post_dates_new h1, .h1_page_without_menu {
     background-image:linear-gradient(#4169e1, #FFF);
 }
 
-#title_index img {
-    position: relative;
-    left: 0;
+.h1_page_without_menu {
+    height: 150px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 1px 2px #000000;
+    font-size: 2em;
+    text-align: center;
+}
+
+#title_index {
+    display: flex;
+    justify-content: center;
 }
 
 #emoji_index {
-    position: absolute;
-    left: 61%;
-    top: 2%;
+    position: relative;
+    left: 20px;
+    top: 20px;
+    right: 20px;
 }
 
 #emoji_index img {
     width: 130%;
-    opacity: 0;
 }
 
 #menu_container {
     margin-top: 100px;
+    font-size: 0.7em;
 }
 
 .image-grid-cover {
@@ -63,46 +76,150 @@
 
 /* FOOTER */
 
-footer {
+footer, .page_without_footer {
     background-image:linear-gradient(#FFF, #4169e1);
     height: 150px;
-    margin-top: 50px;
+    margin-top: 220px;
+    font-size: 0.8em;
+}
+
+.page_without_footer {
+    margin-bottom: 0;
+}
+
+#fb_and_youtube_icons {
+    display: flex;
+    justify-content: space-around;
 }
 
 .footer_icon {
-    display: flex;
-    justify-content: center;
     margin-top: 20px;
 }
 
 .footer_icon img {
-    width: 40%;
+    width: 200%;
 }
-#footer_newsletter {
+
+#emailNewsletter {
+    margin-bottom: 5px;
+}
+
+#footer_contact_and_legal_notice {
     margin-top: 20px;
+    text-align: center;
+}
+
+#footer_contact_and_legal_notice p {
+    margin-top: 10px;
+}
+
+#footer_legal_notice {
+    padding-top: 20px;
+    text-shadow: 1px 1px #000000;
+}
+
+#footer_legal_notice a {
+    color: #FFFFFF;
+}
+
+#footer_legal_notice a:hover {
+    text-decoration: none;
+    color: #4169E1;
+}
+
+#footer_newsletter label {
+    margin-bottom: 10px;
+}
+
+#footer_newsletter .btn {
+    width: 100%;
+}
+
+
+
+/* LEGAL NOTICE */
+
+#legal_notice {
+    font-size: 0.9em;
+}
+
+#legal_notice_h1 {
+    text-align: center;
+    margin-block: 30px;
 }
 
 
 /* MENU */
 
-#connexion_menu, #logout_menu {
-    position: fixed;
-    top: 20px;
-    right: 30px;
+#collapse_menu {
+    display: flex;
     font-size: 1.3em;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 
-#connexion_menu a, #logout_menu a {
+#collapse_menu a {
+    color: #FFFFFF;
+}
+
+#connexion_menu, #logout_menu, #my_account_menu {
+    position: fixed;
+    top: 20px;
+    font-size: 0.8em;
+}
+
+#connexion_menu, #logout_menu {
+    right: 30px;
+}
+
+#my_account_menu {
+    right: 160px;
+}
+
+#connexion_menu a, #logout_menu a, #my_account_menu a {
     color: #FFF;
     text-decoration: none;
 }
 
-#connexion_menu a:hover, #logout_menu a:hover {
+#connexion_menu a:hover, #logout_menu a:hover, #my_account_menu a:hover {
     text-shadow: 2px 1px #4169E1;
 }
 
-#connexion_menu i, #logout_menu i {
-    font-size: 1.5em;
+#menu_pages a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.8em;
+}
+
+#menu_pages a:hover {
+    font-size: 1em;
+    text-shadow: 1px 1px #1F85DE;
+}
+
+#menu_pages ul {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+#menu_pages li {
+    list-style: none;
+}
+
+
+
+/* PRESENTATION */
+
+#tony_di_presentation {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+#tony_di_presentation img {
+    width: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -111,12 +228,12 @@ footer {
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 #body_login, #body_register, #body_forgotten_password, #body_reset_password {
-    background-size: cover;
-    height: 800px;
+    height: 500px;
+    margin-top: 40px;
 }
 
-.return_homepage {
-    font-size: 1.5em;
+#body_register {
+    margin-bottom: 100px;
 }
 
 .container{
@@ -125,7 +242,6 @@ footer {
 }
 
 .card{
-    height: 370px;
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
@@ -133,7 +249,7 @@ footer {
 }
 
 #card_registration {
-    height: 420px;
+    height: 570px;
 }
 
 .social_icon span{
@@ -149,8 +265,8 @@ footer {
 
 .card-header h3{
     color: white;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
     margin-top: 10px;
 }
 
@@ -166,7 +282,6 @@ footer {
     color: #FFF;
     border:0 !important;
     height: 40px;
-    font-size: 1.5em;
 }
 
 .input-group input {
@@ -223,84 +338,53 @@ input:focus{
     text-shadow: 2px 2px #4169e1;
 }
 
-#btn_connexion, #btn_register, #btn_send_forgotton_password {
-    font-size: 1.1em;
+#form_errors_register {
+    font-size: 0.7em;
+    color: #FFFFFF;
+    text-shadow: 1px 1px #F32929;
+    text-align: center;
 }
 
-#btn_register {
-    margin-top: 20px;
+#registration_form_receive_emails {
+    color: #FFFFFF;
 }
 
-.card-body {
-    font-size: 1.5em;
-}
 
-.card-footer {
-    font-size: 1.5em;
-}
 
 
 /* POST DATES INDEX */
 
 #post_dates_index {
-    margin-bottom: 500px;
-    font-size: 1.3em;
+    margin: 30px 10px 100px 10px;
+    font-size: 0.8em;
 }
 
-#post_dates_index h1, #post_dates_edit h1, #post_dates_new h1 {
+#post_dates_index h1, #one_man_show_h1, #legal_notice_h1, #post_dates_h1, #account_h1, #stopReceivingEmails_h1 {
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
+    font-size: 2em;
+    text-shadow: 1px 2px #FFFFFF;
 }
 
-#post_dates_index_link_create, #post_theater_index_link_create {
+#post_dates_index p {
     margin-left: 10px;
+}
+
+#post_dates_index p a:hover {
+    text-decoration: none;
+}
+
+#post_dates_index_link_create, #post_theater_index_link_create, #post_one_man_show_index_link_create {
+    margin-left: 10px;
+    font-size: 0.6em;
 }
 
 #post_dates_th_actions {
     width: 15%;
 }
 
-#post_dates_index_theater {
-    color: #2298F6;
-}
-
-#post_dates_index_animation {
-    color: #F62222;
-}
-
-/*#post_dates_index .btn-outline-primary {
-    color: #000000;
-    border: 1px #000000 solid;
-}
-
-#post_dates_index .btn-outline-primary:hover {
-    color: #FFFFFF;
-    border: 1px #FFFFFF solid;
-    background-color: ##10AFD8;
-}*/
-
-#date_theater_color, #date_animation_color, #test_color {
-    display: flex;
-}
-
-#date_theater_color_block {
-    width: 10px;
-    height: 10px;
-    border: 1px #000000 solid;
-    background-color: #2298F6;
-    margin: 5px 5px 0 10px;
-}
-
-#date_animation_color_block {
-    width: 10px;
-    height: 10px;
-    border: 1px #000000 solid;
-    background-color: #F62222;
-    margin: 5px 5px 0 20px;
-}
 
 
 /* POST DATES SHOW */
@@ -326,15 +410,29 @@ input:focus{
     margin: 10px;
 }
 
-#post_dates_form_fields_id, #post_theater_form_fields_id {
+#post_dates_form_fields_id, #post_theater_form_fields_id, #post_one_man_show_form_fields_id {
     display: flex;
     justify-content: center;
 }
 
-.btn-outline-danger {
-    position: relative;
-    left: 46%;
-    bottom: 24px;
+#post_dates_form_fields_id {
+    text-align: center;
+}
+
+#post_dates_btn_edit_and_delete {
+    display: flex;
+}
+
+#post_dates_btn_edit_and_delete a {
+    margin-right: 10px;
+}
+
+#post_dates_btn_edit_and_delete a, #post_dates_btn_edit_and_delete button {
+    width: 20px;
+    height: 20px;
+    font-size: 1em;
+    padding-right: 22px;
+    padding-bottom: 25px;
 }
 
 .post_dates_form .btn-outline-primary {
@@ -346,16 +444,17 @@ input:focus{
 
 .post_theater_form_fields {
     margin-top: 10px;
+    text-align: left;
 }
 
 
 /* THEATER */
 
 #theater_h1 {
-    font-size: 4em;
     text-align: center;
     height: 70px;
     margin-top: 20px;
+    text-shadow: 1px 2px #FFFFFF;
 }
 
 .theater {
@@ -367,29 +466,56 @@ input:focus{
     display: block;
     padding-top: 5%;
     padding-left: 2%;
+    text-align: center;
+}
+
+#post_theater_content_and_link a, #post_theater_content_and_link {
+    font-size: 0.8em;
+}
+
+#post_theater_btn_edit_and_delete {
+    display: flex;
+    justify-content: center;
+}
+
+#post_theater_btn_edit_and_delete a {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#post_theater_btn_edit_and_delete a, #post_theater_btn_edit_and_delete button {
+    width: 90px;
+    height: 30px;
+    font-size: 0.7em;
+}
+
+#post_theater_no_post_found {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+#post_theater_presentation {
+    display: flex;
+    justify-content: center;
 }
 
 .img_block img {
     width: 30%;
 }
 
-.img_inline img {
-    width: 50%;
+#post_theater_presentation img {
+    max-width: 50%;
+    max-height: 400px;
 }
 
-.img_small img {
-    width: 20%;
+#block_theater {
+    margin-right: 10px;
 }
 
 #block_theater h2 {
     display: flex;
     justify-content: center;
     margin-block: 30px;
-    font-size: 3em;
-}
-
-#block_theater p {
-    font-size: 1.3em;
 }
 
 #block_theater img {
@@ -401,6 +527,139 @@ input:focus{
 }
 
 
+/* POST ONE MAN SHOW */
+
+#post_one_man_show_index_link_create {
+    margin-bottom: 20px;
+}
+
+#post_one_man_show_img {
+    margin-top: 20px;
+}
+
+#post_one_man_show_img, #post_one_man_show_content_and_link p, #post_one_man_show_content_and_link_a {
+    display: flex;
+    justify-content: center;
+}
+
+#post_one_man_show_content_and_link_a a {
+    font-size: 1em;
+}
+
+#block_one_man_show {
+    font-size: 0.8em;
+}
+
+#block_one_man_show hr {
+    width: 50%;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#block_one_man_show h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#block_one_man_show_btn_edit {
+    display: flex;
+    justify-content: center;
+}
+
+#block_one_man_show_btn_edit a {
+    margin-right: 5px;
+}
+
+#block_one_man_show_btn_edit a, #block_one_man_show_btn_edit button, #comments_btn a, #comments_btn button {
+    width: 100px;
+    height: 30px;
+    font-size: 0.9em;
+}
+
+#post_one_man_show_add_images, #btn_add_img, .post_one_man_show_h3 {
+    margin-block: 30px;
+    margin-inline: 10px;
+    text-align: center;
+}
+
+#btn_add_img a, #comments_index_add a, #post_one_man_show_add_images a, #form_add_image_btn button, #btn_delete_img button, #post_dates_form_fields_id button {
+    font-size: 0.8em;
+}
+
+#post_one_man_show_add_images img {
+    width: 15%;
+    height: 150px;
+    margin-bottom: 3px;
+}
+
+#post_one_man_show_add_images img:hover {
+    width: 20%;
+    height: inherit;
+}
+
+#images_screen {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+#return_post_theater {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#post_one_man_show_comments {
+    margin-top: 50px;
+}
+
+#comments_index {
+    margin: 30px;
+}
+
+#comments_btn {
+    display: flex;
+}
+
+#comments_btn a {
+    margin-right: 5px;
+}
+
+#comments_index_add {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#billet_reduc {
+    margin-left: 30px;
+}
+
+#billet_reduc a:hover {
+    text-decoration: none;
+}
+
+#form_add_image {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#form_add_image form {
+    width: 50%;
+}
+
+#form_add_image_btn {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#btn_delete_img {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+
+
 /* FORGOTTEN PASSWORD / RESET PASSWORD */
 
 #body_forgotten_password .card, #body_reset_password .card {
@@ -409,24 +668,239 @@ input:focus{
 
 
 
+/* ACCOUNT */
 
-
-#menu_pages a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-#menu_pages a:hover {
-    font-size: 1.5em;
-    text-shadow: 1px 1px #1F85DE;
-}
-
-#menu_pages ul {
+#my_account p {
     display: flex;
-    justify-content: space-around;
-    padding-top: 20px;
+    justify-content: flex-end;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
-#menu_pages li {
-    list-style: none;
+#change_email_form, #change_password_form, #stopReceivingEmails_form {
+    height: 400px;
+}
+
+#change_email_form .card-body, #change_password_form .card-body, #stopReceivingEmails_form .card-body {
+    height: auto;
+}
+
+#change_email_form .card-footer {
+    margin-top: 40px;
+}
+
+
+
+
+
+
+.btn_return {
+    margin-bottom: 30px;
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+
+.form_fields_comments {
+    margin-bottom: 5px;
+}
+
+.btn_valid_form {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn_valid_form button {
+    font-size: 0.8em;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 991px) {
+    footer {
+        height: 200px;
+    }
+    #footer_contact_and_legal_notice {
+        margin-inline: auto;
+    }
+
+    #footer_legal_notice {
+        padding-top: 0;
+    }
+
+    #footer_newsletter {
+        margin-bottom: 30px;
+    }
+
+    #my_account_menu, #logout_menu {
+        font-size: 0.8em;
+        left: 10px;
+    }
+
+    #my_account_menu span, #logout_menu span {
+        display: none;
+    }
+
+    #logout_menu {
+        left: 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer_icon img {
+        width: 200%;
+    }
+
+    footer {
+        height: 230px;
+    }
+
+    #menu_pages {
+        position: absolute;
+        width: 100%;
+        padding-left: 10px;
+        z-index: 2;
+    }
+
+    #menu_pages ul {
+        display: block;
+        background-color: #3D3D3D;
+        width: 40%;
+        border-radius: 5px;
+        padding-block: 5px;
+        padding-left: 20px;
+    }
+
+    #menu_pages li {
+        padding-block: 5px;
+    }
+
+    .theater {
+        display: block;
+    }
+
+    #block_one_man_show {
+        margin-inline: 10px;
+    }
+
+    #post_one_man_show_add_images a {
+        display: block;
+    }
+
+    #post_one_man_show_add_images img {
+        width: 80%;
+        height: inherit;
+    }
+
+    #post_one_man_show_img img {
+        width: 80%;
+        height: 200px;
+    }
+
+    #post_theater_presentation {
+        display: block;
+        text-align: center;
+    }
+
+    #tony_di_presentation {
+        margin-inline: 10px;
+    }
+
+    #tony_di_presentation img {
+        width: 90%;
+    }
+
+    #body_login, #body_register, #body_reset_password, #body_forgotten_password {
+        font-size: 0.9em;
+    }
+
+    #body_login {
+        height: 400px;
+    }
+
+    #body_forgotten_password, #body_reset_password {
+        height: 300px;
+    }
+
+    #body_register .input-group-text {
+        width: 100%;
+    }
+
+    #post_one_man_show_index_link_create {
+        margin-bottom: 10px;
+    }
+
+    #post_one_man_show_add_images .btn {
+        width: 10%;
+        margin-inline: auto;
+        margin-bottom: 5px;
+    }
+
+    #post_theater_form_fields_id, #post_one_man_show_form_fields_id, #post_dates_form_fields_id {
+        margin-inline: 20px;
+    }
+
+    #post_dates_index {
+        font-size: 0.9em;
+        width: 95%;
+        margin-inline: 2px;
+    }
+
+    #span_login {
+        display: none;
+    }
+
+    #connexion_menu {
+        left: 5%;
+    }
+
+    #header_img_tony_di {
+        width: 50%;
+    }
+
+    #emoji_index img {
+        width: 100%;
+    }
+
+    #emoji_index {
+        top: 10px;
+    }
+}
+
+
+
+@media screen and (max-width: 576px) {
+    footer {
+        font-size: 0.8em;
+        height: 300px;
+    }
+
+    .footer_icon img {
+        width: 40%;
+    }
+
+    .footer_icon {
+        display: flex;
+        justify-content: center;
+        margin-left: 50px;
+    }
+
+    #footer_newsletter {
+        margin-top: 30px;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #post_dates_index {
+        font-size: 0.5em;
+    }
+
+    #post_dates_btn_edit_and_delete a, #post_dates_btn_edit_and_delete button {
+        width: 10px;
+        height: 10px;
+        padding: 3px 20px 20px 10px;
+        font-size: 1.3em;
+    }
 }

@@ -9,7 +9,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * @UniqueEntity(fields={"username"}, message="Ce pseudo est déjà utilisé")
+ * @UniqueEntity(fields={"email"}, message="Cet email est déjà utilisé")
  */
 class User implements UserInterface
 {
@@ -41,7 +42,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
@@ -50,6 +51,11 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $resetToken;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $receiveEmails;
 
     public function getId(): ?int
     {
@@ -79,8 +85,9 @@ class User implements UserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        if (empty($roles)) {
+            $roles[] = 'ROLE_USER';
+        }
 
         return array_unique($roles);
     }
@@ -150,5 +157,20 @@ class User implements UserInterface
     public function setResetToken(?string $resetToken): void
     {
         $this->resetToken = $resetToken;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getReceiveEmails(): bool
+    {
+        return (bool) $this->receiveEmails;
+    }
+
+    public function setReceiveEmails(bool $receiveEmails): self
+    {
+        $this->receiveEmails = $receiveEmails;
+
+        return $this;
     }
 }

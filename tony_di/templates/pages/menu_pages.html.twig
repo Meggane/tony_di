@@ -1,9 +1,12 @@
  <div id="nav_and_h1">
-    <nav id="menu_pages">
+     <div id="collapse_menu">
+         <a class="menu-bar" data-toggle="collapse" href="#menu_pages"><i class="fas fa-bars"></i></a>
+     </div>
+     <nav id="menu_pages" class="collapse">
         <ul>
             <li><a href="{{ asset("homepage") }}"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="{{ asset("theatre") }}"><i class="fas fa-theater-masks"></i> Théâtre</a></li>
-            <li><a href="{{ asset("animations") }}"><i class="fab fa-itunes-note"></i> Animations</a></li>
+            <li><a href="{{ asset("post/seul_en_scene") }}"><i class="fas fa-theater-masks"></i> Seul en scène</a></li>
+            <li><a href="{{ asset("post/theater") }}"><i class="fas fa-theater-masks"></i> Théâtre</a></li>
             <li><a href="{{ asset("post/dates") }}"><i class="fas fa-calendar-alt"></i> Dates</a></li>
             <li><a href="{{ asset("presentation") }}"><i class="far fa-question-circle"></i> À propos</a></li>
             {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}

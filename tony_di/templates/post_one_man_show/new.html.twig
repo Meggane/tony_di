@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tony Di - Ajouter un nouveau post{% endblock %}
+
+{% block body %}
+    <h1 class="h1_page_without_menu">Ajouter un nouveau post</h1>
+    <a href="{{ path('post_one_man_show_index') }}" class="btn btn-outline-primary btn_return"><i class="fas fa-arrow-circle-left"></i> Retour à la page précédente</a>
+    {{ include('post_one_man_show/_form.html.twig') }}
+    <p class="page_without_footer"></p>
+{% endblock %}

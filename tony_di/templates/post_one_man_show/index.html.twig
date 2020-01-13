@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tony Di - Seul en scène{% endblock %}
+{% block titleSocialNetworksOP %}Tony Di - Seul en scène{% endblock %}
+{% block titleSocialNetworksTwitter %}Tony Di - Seul en scène{% endblock %}
+
+{% block body %}
+    <link href="{{ asset('lightbox/lightbox.css') }}" rel="stylesheet">
+
+    {{ include("pages/menu_pages.html.twig") }}
+
+    <h1 id="one_man_show_h1">Seul en scène</h1>
+    </div>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('post_one_man_show_new') }}" id="post_one_man_show_index_link_create" class="btn btn-primary">Créer un nouveau post</a>
+    {% endif %}
+
+    <div id="block_one_man_show">
+        {% for post_one_man_show in post_one_man_shows %}
+            <div>
+                <hr>
+                <h2>{{ post_one_man_show.title }}</h2>
+                <hr>
+                {% if post_one_man_show.urlImage != null %}
+                <p id="post_one_man_show_img">
+                    <img src="{{ asset(post_one_man_show.urlImage) }}">
+                </p>
+                {% endif %}
+                <div id="post_one_man_show_content_and_link">
+                    <p>{{ post_one_man_show.content | raw }}
+                    {% if post_one_man_show.linkTeaser != null %}
+                        <p id="post_one_man_show_content_and_link_a">
+                            <a href="{{ post_one_man_show.linkTeaser }}" class="btn btn-outline-primary one_man_show_teaser"><i class="fas fa-external-link-alt"></i> Teaser</a>
+                        </p>
+                    {% endif %}
+                    </p>
+                </div>
+            </div>
+            {% if is_granted('ROLE_ADMIN') %}
+                <div id="block_one_man_show_btn_edit">
+                    <a href="{{ path('post_one_man_show_edit', {'id': post_one_man_show.id}) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Modifier</a>
+                    {{ include('post_one_man_show/_delete_form.html.twig') }}
+                </div>
+            {% endif %}
+
+            <hr>
+            <div>
+                <h3 class="post_one_man_show_h3">Images du spectacle</h3>
+                <hr>
+                <div>
+                    {{ include("images/index.html.twig") }}
+                </div>
+            </div>
+
+            <hr>
+            <div>
+                <h3 class="post_one_man_show_h3">Commentaires sur le spectacle</h3>
+                {{ include("comments/index.html.twig") }}
+                <p id="billet_reduc">Vous pouvez trouver plus de commentaires sur le spectacle sur <a href="https://www.billetreduc.com/">BilletRéduc</a></p>
+            </div>
+
+        {% else %}
+            <p colspan="6">Aucun post trouvé</p>
+        {% endfor %}
+    </div>
+
+    <footer>
+        {{ include("pages/footer.html.twig") }}
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{ asset('lightbox/lightbox.js') }}"></script>
+{% endblock %}

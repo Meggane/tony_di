@@ -3,49 +3,46 @@
 {% block title %}Tony Di - Dates à venir{% endblock %}
 
 {% block body %}
-    <div id="post_dates_index">
-        {{ include("pages/menu_pages.html.twig") }}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
-        <h1>Dates à venir</h1>
-        </div>
+    {{ include("pages/menu_pages.html.twig") }}
 
-    <div id="test_color">
-        <div id="date_theater_color">
-            <p id="date_theater_color_block"></p>
-            <p>Théâtre</p>
-        </div>
-        <div id="date_animation_color">
-            <p id="date_animation_color_block"></p>
-            <p>Animations</p>
-        </div>
+    <h1 id="post_dates_h1">Dates à venir</h1>
     </div>
 
-        <table class="table">
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('post_dates_new') }}" id="post_dates_index_link_create" class="btn btn-primary">Créer une nouvelle date</a>
+    {% endif %}
+
+    <div id="post_dates_index">
+        <table id="datatables" class="table table-striped table-bordered display">
             <thead>
                 <tr>
                     <th>Date</th>
+                    <th>Catégorie</th>
                     <th>Spectacle</th>
                     <th>Lieu</th>
-                    {% if is_granted('ROLE_USER') %}
+                    {% if is_granted('ROLE_ADMIN') %}
                         <th id="post_dates_th_actions">Actions</th>
                     {% endif %}
                 </tr>
             </thead>
             <tbody>
             {% for post_date in post_dates %}
-                {% if post_date.category ? 'Théâtre' %}
-                <tr id="post_dates_index_theater">
-                {% else %}
-                <tr id="post_dates_index_animation">
-                {% endif %}
-                    <td>{{ post_date.date ? post_date.date|date('d/m/Y H:i') : '' }}</td>
+                <tr>
+                    {% if post_date.startDate == post_date.endDate %}
+                        <td>{{ post_date.startDate ? post_date.startDate|date('d/m/Y à H:i') : '' }}</td>
+                    {% else %}
+                        <td>Du {{ post_date.startDate ? post_date.startDate|date('d/m/Y') : '' }} au {{ post_date.endDate ? post_date.endDate|date('d/m/Y à H:i') : '' }}</td>
+                    {% endif %}
+                    <td>{{ post_date.category }}</td>
                     <td>{{ post_date.spectacle }}</td>
                     <td>{{ post_date.lieu }}</td>
-                    {% if is_granted('ROLE_USER') %}
-                        <td>
-                            <a href="{{ path('post_dates_show', {'id': post_date.id}) }}" class="btn btn-outline-primary">Voir</a>
-
-                            <a href="{{ path('post_dates_edit', {'id': post_date.id}) }}" class="btn btn-outline-primary">Mettre à jour</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td id="post_dates_btn_edit_and_delete">
+                            <a href="{{ path('post_dates_edit', {'id': post_date.id}) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i></a>
+                            {{ include('post_dates/_delete_form.html.twig') }}
                         </td>
                     {% endif %}
                 </tr>
@@ -56,12 +53,41 @@
             {% endfor %}
             </tbody>
         </table>
-        {% if is_granted('ROLE_USER') %}
-            <a href="{{ path('post_dates_new') }}" id="post_dates_index_link_create" class="btn btn-primary">Créer une nouvelle date</a>
-        {% endif %}
     </div>
 
     <footer>
         {{ include("pages/footer.html.twig") }}
     </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datatables').DataTable({
+                "language": {
+                    "lengthMenu": "Afficher _MENU_ résultats par page",
+                    "zeroRecords": "Aucun résultat trouvé",
+                    "info": "Page _PAGE_ sur _PAGES_",
+                    "infoEmpty": "Aucune date trouvée",
+                    "infoFiltered": "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    "search": "Rechercher :",
+                    "processing": "Traitement en cours...",
+                    "loadingRecords": "Chargement en cours...",
+                    "paginate": {
+                        "first": "Premier",
+                        "previous": "Pr&eacute;c&eacute;dent",
+                        "next": "Suivant",
+                        "last": "Dernier",
+                    },
+                }
+            });
+        });
+    </script>
+    <script src="{{ asset('build/style.js') }}"></script>
+    <script src="{{ asset('build/runtime.js') }}"></script>
+    <script src="{{ asset('build/vendors~style.js') }}"></script>
 {% endblock %}

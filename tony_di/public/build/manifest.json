@@ -1,0 +1,8 @@
+{
+  "public/build/app.css": "/public/build/app.css",
+  "public/build/app.js": "/public/build/app.js",
+  "public/build/runtime.js": "/public/build/runtime.js",
+  "public/build/style.css": "/public/build/style.css",
+  "public/build/style.js": "/public/build/style.js",
+  "public/build/vendors~style.js": "/public/build/vendors~style.js"
+}

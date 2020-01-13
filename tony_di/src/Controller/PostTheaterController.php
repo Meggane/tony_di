@@ -9,24 +9,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 
 /**
  * @Route("/post/theater")
  */
-class PostTheaterController extends AbstractController
+class PostTheaterController extends PagesController
 {
     /**
-     * @Route("/", name="post_theater_index", methods={"GET"})
+     * @Route("/", name="post_theater_index", methods={"GET", "POST"})
      */
-    public function index(PostTheaterRepository $postTheaterRepository): Response
+    public function index(Request $request, PostTheaterRepository $postTheaterRepository, TokenGeneratorInterface $tokenGenerator, \Swift_Mailer $mailer): Response
     {
-        return $this->render('post_theater/index.html.twig', [
-            'post_theaters' => $postTheaterRepository->findAll(),
-        ]);
+        return $this->newsletter($mailer, $tokenGenerator, $request, 'post_theater/index.html.twig', 'post_theaters', $postTheaterRepository->findAll());
     }
 
     /**
-     * @Route("/new", name="post_theater_new", methods={"GET","POST"})
+     * @Route("/new/admin", name="post_theater_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -35,19 +34,21 @@ class PostTheaterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $directory = $this->getParameter('imageDir');
-
             $file = $form['image']->getData();
 
-            $error = $file->getError();
-            $size = $file->getSize();
-            $extension = $file->getClientOriginalExtension();
-            $filename = $file->getClientOriginalName();
+            if ($file != null) {
+                $directory = $this->getParameter('imageDir');
 
-            $file->move($directory, "$filename");
+                $error = $file->getError();
+                $size = $file->getSize();
+                $extension = $file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName();
 
-            $imageUrl = $this->getParameter('imageUrl');
-            $postTheater->setUrlImage("$imageUrl/$filename");
+                $file->move($directory, "$filename");
+
+                $imageUrl = $this->getParameter('imageUrl');
+                $postTheater->setUrlImage("$imageUrl/$filename");
+            }
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($postTheater);
@@ -63,17 +64,7 @@ class PostTheaterController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="post_theater_show", methods={"GET"})
-     */
-    public function show(PostTheater $postTheater): Response
-    {
-        return $this->render('post_theater/show.html.twig', [
-            'post_theater' => $postTheater,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="post_theater_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit/admin", name="post_theater_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, PostTheater $postTheater): Response
     {
@@ -81,19 +72,21 @@ class PostTheaterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $directory = $this->getParameter('imageDir');
-
             $file = $form['image']->getData();
 
-            $error = $file->getError();
-            $size = $file->getSize();
-            $extension = $file->getClientOriginalExtension();
-            $filename = $file->getClientOriginalName();
+            if ($file != null) {
+                $directory = $this->getParameter('imageDir');
 
-            $file->move($directory, "$filename");
+                $error = $file->getError();
+                $size = $file->getSize();
+                $extension = $file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName();
 
-            $imageUrl = $this->getParameter('imageUrl');
-            $postTheater->setUrlImage("$imageUrl/$filename");
+                $file->move($directory, "$filename");
+
+                $imageUrl = $this->getParameter('imageUrl');
+                $postTheater->setUrlImage("$imageUrl/$filename");
+            }
 
             $this->getDoctrine()->getManager()->flush();
 
@@ -107,7 +100,7 @@ class PostTheaterController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="post_theater_delete", methods={"DELETE"})
+     * @Route("/{id}/admin", name="post_theater_delete", methods={"DELETE"})
      */
     public function delete(Request $request, PostTheater $postTheater): Response
     {

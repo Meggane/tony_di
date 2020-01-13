@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tony Di - Stop emails{% endblock %}
+
+{% block body %}
+
+    <div>
+        {{ include("pages/menu_pages.html.twig") }}
+
+        <h1 id="stopReceivingEmails_h1">Stop emails</h1>
+    </div>
+
+    <div id="stopReceivingEmails_form">
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Ne plus recevoir d'emails</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-at"></i></span>
+                                </div>
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Entrez votre adresse email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Valider" class="btn float-right login_btn">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="page_without_footer"></p>
+{% endblock %}

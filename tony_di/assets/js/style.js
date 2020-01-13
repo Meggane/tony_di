@@ -1,18 +1,10 @@
 require('../css/style.css');
 
-$(document).ready(function(){
-    $('#title_index img').animate({
-        left: '42%',
-        width: "+=100px"
-    }, 1000)
-        .animate({
-            width: "-=100px",
-        }, 500);
-    $("#emoji_index img").animate({
-        opacity: "1",
-        width: "+=30px"
-    }, 1000)
-        .animate({
-            width: "-=30px"
-        }, 500);
+$(document).on('change', '.custom-file-input', function () {
+    let fileName = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
+    $(this).parent('.custom-file').find('.custom-file-label').text(fileName);
 });
+
+if ($('#collapse_menu').click(function () {
+    $('#menu_pages').css('visibility', 'visible');
+}));

@@ -18,12 +18,11 @@ class PostTheaterType extends AbstractType
             ->add('title')
             ->add('image',FileType::class, [
                 'label' => 'Image',
-                'mapped' => true,
                 'data_class' => null,
                 'required' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
+                        'maxSize' => '2M',
                         'mimeTypes' => [
                             'application/pdf',
                             'application/x-pdf',
@@ -31,7 +30,7 @@ class PostTheaterType extends AbstractType
                             'image/jpeg',
                             'image/gif'
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid document',
+                        'mimeTypesMessage' => 'Veuillez charger un document valide',
                     ])
                 ],
             ])

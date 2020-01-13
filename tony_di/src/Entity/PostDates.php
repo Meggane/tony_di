@@ -19,7 +19,7 @@ class PostDates
     /**
      * @ORM\Column(type="datetime")
      */
-    private $date;
+    private $startDate;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -36,21 +36,14 @@ class PostDates
      */
     private $category;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $endDate;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
-
-        return $this;
     }
 
     public function getSpectacle(): ?string
@@ -85,6 +78,30 @@ class PostDates
     public function setCategory(string $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getStartDate(): ?\DateTimeInterface
+    {
+        return $this->startDate;
+    }
+
+    public function setStartDate(\DateTimeInterface $startDate): self
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    public function getEndDate(): ?\DateTimeInterface
+    {
+        return $this->endDate;
+    }
+
+    public function setEndDate(\DateTimeInterface $endDate): self
+    {
+        $this->endDate = $endDate;
 
         return $this;
     }

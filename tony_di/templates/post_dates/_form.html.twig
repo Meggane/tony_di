@@ -2,9 +2,12 @@
 <div id="post_dates_form_fields_id">
 {{ form_start(form) }}
     {{ form_widget(form.category, {'attr': {'class': 'post_dates_form_fields'}}) }}
-    {{ form_widget(form.date, {'attr': {'class': 'post_dates_form_fields'}}) }}
-    {{ form_widget(form.spectacle, {'attr': {'class': 'post_dates_form_fields', 'placeholder': 'spectacle'}}) }}
-    {{ form_widget(form.lieu, {'attr': {'class': 'post_dates_form_fields', 'placeholder': 'lieu'}}) }}
-    <button class="btn btn-outline-primary">{{ button_label|default('Publier') }}</button>
+    <label>Date de début</label>
+    {{ form_widget(form.start_date, {'attr': {'class': 'post_dates_form_fields'}}) }}
+    <label>Date de fin</label>
+    {{ form_widget(form.end_date, {'attr': {'class': 'post_dates_form_fields', 'label': 'au'}}) }}
+    {{ form_widget(form.spectacle, {'attr': {'class': 'post_dates_form_fields', 'placeholder': 'Nom du spectacle'}}) }}
+    {{ form_widget(form.lieu, {'attr': {'class': 'post_dates_form_fields', 'placeholder': 'Lieu'}}) }}
+    <button class="btn btn-outline-primary"><i class="fas fa-edit"></i> {{ button_label|default('Publier') }}</button>
 {{ form_end(form) }}
 </div>

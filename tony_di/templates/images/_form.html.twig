@@ -1,0 +1,10 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div id="form_add_image">
+{{ form_start(form) }}
+    {{ form_widget(form.image, {'attr': {'class': 'images_form_fields', 'placeholder': 'Ajouter une image'}}) }}
+    {{ form_widget(form.show_name, {'attr': {'placeholder': 'Nom du spectacle'}}) }}
+    <div id="form_add_image_btn">
+        <button class="btn btn-outline-primary"><i class="fas fa-edit"></i> {{ button_label|default('Publier') }}</button>
+    </div>
+{{ form_end(form) }}
+</div>

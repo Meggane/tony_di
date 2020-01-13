@@ -20,19 +20,23 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('username')
             ->add('email')
+            ->add('receiveEmails', CheckboxType::class, [
+                'required' => false,
+                'label' => "J'accepte de recevoir des emails",
+                'attr' => array('checked' => 'checked'),
+            ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
+                'invalid_message' => 'Les mots de passes doivent être identiques.',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
+                        'minMessage' => 'Le mot de passe doit comporter au moins 6 caractères',
                         'max' => 4096,
                     ]),
                 ],

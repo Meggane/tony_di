@@ -1,19 +1,30 @@
 <div class="container">
     <div class="row">
-        <div class="footer_icon col-lg-2">
+        <div id="fb_and_youtube_icons">
+        <div class="footer_icon col-lg-2 col-sm-2">
             <a href="https://www.facebook.com/tonidilyon"><img src="{{ asset('images/icon_fb.png') }}"></a>
         </div>
-        <div class="footer_icon col-lg-2">
-            <a href="#"><img src="{{ asset('images/icon_twitter.png') }}"></a>
-        </div>
-        <div class="footer_icon col-lg-2">
+        <div class="footer_icon col-lg-2 col-sm-2">
             <a href="https://www.youtube.com/channel/UCmDxlJxivXiUXCGwKmJ-dUg"><img src="{{ asset('images/icon_youtube.png') }}"></a>
         </div>
-        <div id="footer_newsletter" class="col-lg-offset-2 col-lg-2">
-            <p>Newsletter</p>
         </div>
-        <div id="footer_legal_notice" class="col-lg-2">
-            <a href="{{ asset("legal_notice") }}">Mentions Légales</a>
+        <div id="footer_newsletter" class="offset-lg-1 col-lg-3 col-sm-4">
+            <form method="post">
+                <label>Newsletter</label>
+                <div class="input-group mb-3">
+                    <input type="email" id="emailNewsletter" class="form-control" name="emailNewsletter" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-primary" value="S'abonner">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="footer_contact_and_legal_notice" class="offset-lg-1 col-lg-2 col-sm-3">
+            <h4>Contact</h4>
+            <p>tonydianimation@gmail.com</p>
+            <p id="footer_legal_notice">
+                <a href="{{ asset("mentions_legales") }}">Mentions Légales</a>
+            </p>
         </div>
     </div>
 </div>
