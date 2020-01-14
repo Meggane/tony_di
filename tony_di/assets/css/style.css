@@ -484,7 +484,7 @@ input:focus{
 }
 
 #post_theater_btn_edit_and_delete a, #post_theater_btn_edit_and_delete button {
-    width: 90px;
+    width: 100px;
     height: 30px;
     font-size: 0.7em;
 }
@@ -675,6 +675,10 @@ input:focus{
     justify-content: flex-end;
     margin-right: 20px;
     margin-top: 20px;
+}
+
+#my_account a {
+    font-size: 0.8em;
 }
 
 #change_email_form, #change_password_form, #stopReceivingEmails_form {
