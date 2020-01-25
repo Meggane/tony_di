@@ -51,14 +51,14 @@ class PostDatesController extends PagesController
                 $message = (new \Swift_Message('Une nouvelle date de spectacle a été publiée'))
                     ->setFrom('meganeberthelot@tonydi.meganeberthelot.fr')
                     ->setBcc($emails)
-                    ->setBody("Tony DI vient de publier une nouvelle date à " . $postDate->getLieu() . " concernant le spectacle " . $postDate->getSpectacle() . " le " . $postDate->getStartDate()->format('d/m/Y à H:i') . ". Pour ne rien manquer, retrouvez toutes ses dates de spectacle en cliquant sur le lien suivant : https://tonydi.meganeberthelot.fr/post/dates/ \n Si vous ne souhaitez plus recevoir d'emails, cliquez sur le lien suivant : https://tonydi.meganeberthelot.fr/stopReceivingEmails/",
+                    ->setBody("Tony DI vient de publier une nouvelle date à " . $postDate->getLieu() . " concernant le spectacle " . $postDate->getSpectacle() . " le " . $postDate->getStartDate()->format('d/m/Y à H:i') . ". Pour ne rien manquer, retrouvez toutes ses dates de spectacle en cliquant sur le lien suivant : http://localhost/git_tony/tony_di/tony_di/public/post/dates/ \n Si vous ne souhaitez plus recevoir d'emails, cliquez sur le lien suivant : http://localhost/git_tony/tony_di/tony_di/public/stopReceivingEmails/",
                         'text/html'
                     );
             } else {
                 $message = (new \Swift_Message('Des nouvelles dates de spectacle ont été publiées'))
                     ->setFrom('meganeberthelot@tonydi.meganeberthelot.fr')
                     ->setBcc($emails)
-                    ->setBody("Tony DI vient de publier des nouvelles dates à " . $postDate->getLieu() . " concernant le spectacle " . $postDate->getSpectacle() . " du " . $postDate->getStartDate()->format('d/m/Y') . " au " . $postDate->getEndDate()->format('d/m/Y à H:i') . ". Pour ne rien manquer, retrouvez toutes ses dates de spectacle en cliquant sur le lien suivant : https://tonydi.meganeberthelot.fr/post/dates/ \n Si vous ne souhaitez plus recevoir d'emails, cliquez sur le lien suivant : https://tonydi.meganeberthelot.fr/stopReceivingEmails/",
+                    ->setBody("Tony DI vient de publier des nouvelles dates à " . $postDate->getLieu() . " concernant le spectacle " . $postDate->getSpectacle() . " du " . $postDate->getStartDate()->format('d/m/Y') . " au " . $postDate->getEndDate()->format('d/m/Y à H:i') . ". Pour ne rien manquer, retrouvez toutes ses dates de spectacle en cliquant sur le lien suivant : http://localhost/git_tony/tony_di/tony_di/public/post/dates/ \n Si vous ne souhaitez plus recevoir d'emails, cliquez sur le lien suivant : http://localhost/git_tony/tony_di/tony_di/public/stopReceivingEmails/",
                 "text/html"
                     );
             }
